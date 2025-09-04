@@ -1,0 +1,268 @@
+/* CSS para estilizar a página com a paleta de cores fornecida */
+:root {
+    --primary-color: #A62000;   /* Vermelho/Marrom para detalhes principais */
+    --secondary-color: #A63D00; /* Marrom/Laranja para fundos e seções */
+    --accent-color: #E05607;    /* Laranja vibrante para botões e destaques */
+    --gold-color: #A67000;      /* Dourado para promoções e detalhes */
+    --text-color: #3d2c21;      /* Cor de texto escura e quente */
+    --bg-color: #fffaf0;        /* Fundo principal levemente amarelado/creme */
+    --white-color: #ffffff;
+}
+
+/* Reset básico e configurações globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* Cabeçalho e Navegação */
+header {
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 1rem;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+}
+
+header h1 {
+    font-family: 'Lora', serif;
+    font-size: 2.5rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: var(--white-color);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Adiciona um destaque visual para o link da página ativa */
+nav a.active {
+    background-color: rgba(0, 0, 0, 0.15);
+    font-weight: 700;
+}
+
+/* Conteúdo Principal e Seções */
+main {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+section {
+    background: var(--white-color);
+    margin-bottom: 2.5rem;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+h2 {
+    font-family: 'Lora', serif;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 2.2rem;
+}
+
+section p {
+    text-align: justify;
+    max-width: 800px;
+    margin: 0 auto 1rem auto;
+}
+
+/* Estilo do Cardápio */
+.cardapio-grid, .login-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 2rem;
+}
+
+.pizza-item {
+    border: 1px solid #eee;
+    border-radius: 12px;
+    text-align: center;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pizza-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.pizza-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.pizza-item h3 { margin-bottom: 0.5rem; }
+
+.pizza-item .price {
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 1rem 0;
+    font-size: 1.3rem;
+}
+
+/* Estilo das Promoções */
+.promo {
+    border: 2px dashed var(--gold-color);
+    padding: 1.5rem;
+    background-color: #fffbeb;
+    border-radius: 8px;
+    margin-top: 2rem;
+}
+.promo h3 { color: var(--gold-color); }
+
+/* Seção de Pedidos e Carrinho */
+#cart-area {
+    background-color: var(--bg-color);
+    padding: 2rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+}
+
+#cart-items { list-style: none; }
+#cart-items li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-summary {
+    margin-top: 1.5rem;
+    text-align: right;
+    font-size: 1.1rem;
+}
+.cart-summary p { text-align: right; }
+#total { font-weight: 700; font-size: 1.4rem; color: var(--primary-color); }
+
+/* Estilo dos Formulários */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 2rem auto 0 auto;
+}
+form h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+form label { margin-bottom: 5px; font-weight: 500; }
+form input {
+    padding: 12px;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+form input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(224, 86, 7, 0.2);
+}
+
+/* Estilo dos Botões */
+.btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-accent {
+    background-color: var(--accent-color);
+    color: var(--white-color);
+}
+
+.btn-accent:hover {
+    background-color: #c54a06;
+    transform: scale(1.03);
+}
+
+/* Botão Flutuante do WhatsApp */
+.whatsapp-button {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #25D366;
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 1001;
+    transition: transform 0.3s ease;
+}
+.whatsapp-button:hover {
+    transform: scale(1.1);
+}
+.whatsapp-button svg {
+    width: 32px;
+    height: 32px;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: var(--secondary-color);
+    color: var(--white-color);
+}
