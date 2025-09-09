@@ -1,1 +1,1 @@
-https://brinous1.github.io/pizzariadanona/pizzaria.html
+https://brinous1.github.io/pizzaria/cardapio.html
